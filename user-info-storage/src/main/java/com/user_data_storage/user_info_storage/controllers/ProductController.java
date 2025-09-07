@@ -8,6 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api")
 public class ProductController {
@@ -26,8 +29,12 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public ResponseEntity<Product> createProduct(@Valid @RequestBody ProductDto productDto){
+    public ResponseEntity<?> createProduct(@Valid @RequestBody ProductDto productDto){
 
+        Optional<Product> sameProduct = productService.findProductBySku(productDto.getSku());
+        if(sameProduct.isPresent()){
+           return new ResponseEntity<>("Product already exist , please use update api",HttpStatus.CONFLICT);
+        }
         return new ResponseEntity<>(productService.creteProduct(productDto.productDtoToProduct(productDto)), HttpStatus.CREATED);
 
     }
