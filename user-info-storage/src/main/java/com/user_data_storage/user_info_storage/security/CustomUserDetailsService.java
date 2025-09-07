@@ -1,7 +1,7 @@
 package com.user_data_storage.user_info_storage.security;
 
 import com.user_data_storage.user_info_storage.models.Customer;
-import com.user_data_storage.user_info_storage.repositery.CustomerRepository;
+import com.user_data_storage.user_info_storage.repository.CustomerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
