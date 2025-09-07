@@ -2,8 +2,7 @@ package com.user_data_storage.user_info_storage.services;
 
 import com.user_data_storage.user_info_storage.dto.CustomerDto;
 import com.user_data_storage.user_info_storage.models.Customer;
-import com.user_data_storage.user_info_storage.repositery.CustomerRepository;
-import lombok.Setter;
+import com.user_data_storage.user_info_storage.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
